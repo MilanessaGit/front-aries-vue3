@@ -32,7 +32,7 @@ export default {
             router.push({name: 'about'}) // redireccionamos a dashboard
             
         }
-        return{ usuario, funIngresar}
+        return{ usuario, funIngresar }
     }
 }
 </script>

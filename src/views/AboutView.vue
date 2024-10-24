@@ -26,7 +26,7 @@ export default {
     const salir = async() => {
       await authService.logout();
       localStorage.removeItem("access_token");
-      router.push({name: 'Login'})
+      router.push({name: 'Login'}) // router redirecciona a /login
     } 
 
     perfil() // Hago funcionar la funcion-flecha perfil

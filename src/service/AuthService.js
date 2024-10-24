@@ -11,6 +11,6 @@ export default {
         return http().get('/v1/auth/perfil');
     },
     logout(){
-        return http().post('/v1/auth/login');
+        return http().post('/v1/auth/logout');
     }
 }
