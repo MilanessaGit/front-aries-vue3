@@ -23,10 +23,11 @@ export default {
         
         const funIngresar = async () => { // async siempre trabaja con await
             // usuario.value (aqui estan los datos de => const usuario, cuando usamos ref())
-            // console.log(usuario.value) muestra los datos cm objeto (inspeccionar pagina)
-            const {data} = await authService.login(usuario.value) //todo lo capturado de v-model usuario.value(ref)
-            console.log(data) //captura la respuesta del Sevidor(Laravel) en (data): [access_token, token_type y usuario => {id,name,email}]
-            localStorage.setItem("access_token", data.access_token) // seteamos y Guardamos con el nombre de "access_token"("clave") => data.access_token(valor) en el Almacenamiento Local 
+            // console.log(usuario.value) muestra los datos cm objeto (inspeccionar pagina en la web)
+            const {data} = await authService.login(usuario.value) //1ro. se envia los datos de usuario desde Vue, 2do.(await) se espera la respuesta del servidor Laravel(token)
+            console.log(data) 
+            
+            localStorage.setItem("access_token", data.access_token) // En LocalStorage seteamos y guardamos la respuesta del servidor(data.access_token), con el nombre de "access_token"
             //,data.access_token : Es el token que genero Laravel y q nos envia cm respuesta de la funcion login-LARAVEL
             alert("INGRESANDO..")
             router.push({name: 'about'}) // redireccionamos a dashboard

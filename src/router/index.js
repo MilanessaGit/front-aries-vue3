@@ -24,7 +24,13 @@ const router = createRouter({
       path: '/login',
       name: 'Login',
       component: Login,
-      meta: {redirectIfAuth: true}
+      meta: {redirectIfAuth: true} //redirecciona si tiene authentication
+    },
+    {
+      path: '/admin/usuario',
+      name: 'Usuario',
+      component: () => import('../views/admin/Usuario.vue'),
+      meta: {requireAuth: true} //requiere authentication para acceder a la route
     }
   ]
 })

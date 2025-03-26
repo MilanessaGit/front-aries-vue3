@@ -16,7 +16,7 @@ import { useRouter } from 'vue-router'
 export default {
   setup() {
     const router = useRouter()
-    const mis_datos = ref({})
+    const mis_datos = ref({}) // Si usamos ref , entonces para acceder a los valores d objeto usamos .value
 
     const perfil = async() => {  
       const {data} = await authService.getPerfil();
