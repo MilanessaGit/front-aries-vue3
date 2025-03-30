@@ -1,8 +1,8 @@
 import { http } from "./HttpAxios";
 
 export default {
-    listar(){
-        return http().get("/admin/usuario");
+    listar(q=''){
+        return http().get("/admin/usuario?buscado="+q);
     },
     guardar(datos){
         return http().post("/admin/usuario", datos); 
